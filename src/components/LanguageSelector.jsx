@@ -1,11 +1,12 @@
 // src/components/LanguageSelector.jsx
 import React, { useState, useRef, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import ReactCountryFlag from "react-country-flag";
 
 const FLAGS = {
-  it: "🇮🇹",
-  fr: "🇫🇷",
-  en: "🇬🇧",
+  it: "IT",
+  fr: "FR",
+  en: "GB",
 };
 
 const LanguageSelector = () => {
@@ -13,7 +14,6 @@ const LanguageSelector = () => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (ref.current && !ref.current.contains(e.target)) {
@@ -32,26 +32,34 @@ const LanguageSelector = () => {
           onClick={() => setOpen(!open)}
           className="text-4xl px-3 py-1 cursor-pointer"
         >
-          {FLAGS[lang]}
+          <ReactCountryFlag
+            countryCode={FLAGS[lang]}
+            svg
+            style={{ width: "1em", height: "1em" }}
+          />
         </button>
 
         {/* Dropdown */}
         {open && (
           <div className="absolute right-0 mt-2 bg-white/90 backdrop-blur-md rounded-md shadow-lg flex flex-col">
-            {Object.entries(FLAGS).map(([code, flag]) => (
-              code !== lang && (
+            {Object.entries(FLAGS).map(([code, cc]) =>
+              code !== lang ? (
                 <button
                   key={code}
                   onClick={() => {
                     setLang(code);
                     setOpen(false);
                   }}
-                  className="text-2xl px-3 py-1 hover:bg-gray-100 transition"
+                  className="px-3 py-1 hover:bg-gray-100 transition"
                 >
-                  {flag}
+                  <ReactCountryFlag
+                    countryCode={cc}
+                    svg
+                    style={{ width: "2em", height: "2em" }}
+                  />
                 </button>
-              )
-            ))}
+              ) : null
+            )}
           </div>
         )}
       </div>

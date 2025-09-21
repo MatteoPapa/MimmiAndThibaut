@@ -1,14 +1,18 @@
+// About.jsx
 import React, { useState, useRef, useEffect } from "react";
 import Layout from "../components/Layout.jsx";
 import Information from "../components/Information.jsx";
 import Confirmation from "../components/Confirmation.jsx";
 import GiftRegistry from "../components/GiftRegistry.jsx";
 import AboutNavbar from "../components/AboutNavbar.jsx";
+import { useLanguage } from "../context/LanguageContext"; // ← add
 
 const STORAGE_KEY = "about_active_tab";
-const VALID_TABS = ["information", "confirmation", "gift"]; // never persist "home"
+const VALID_TABS = ["information", "confirmation", "gift"];
 
 const About = () => {
+  const { t } = useLanguage(); // ← get translations
+
   const [activeTab, setActiveTab] = useState(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -21,11 +25,12 @@ const About = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef();
 
+  // Localized labels (fallback to Italian keys if you prefer)
   const tabs = [
-    { key: "home", label: "Home", icon: "images/home.png" },
-    { key: "information", label: "Informazioni", icon: "images/information.png" },
-    { key: "confirmation", label: "Conferma", icon: "images/confirmation.png" },
-    { key: "gift", label: "Lista Nozze", icon: "images/present.png" },
+    { key: "home",         label: "Home",                     icon: "images/home.png" },
+    { key: "information",  label: t.info.title,               icon: "images/information.png" },
+    { key: "confirmation", label: t.rsvp?.title || "Conferma",  icon: "images/confirmation.png" },
+    { key: "gift",         label: t.gift?.title || "Lista Nozze", icon: "images/present.png" },
   ];
 
   const renderTab = () => {
@@ -41,18 +46,16 @@ const About = () => {
     }
   };
 
-  // ✅ Persist on change (no load effect needed)
   useEffect(() => {
     if (VALID_TABS.includes(activeTab)) {
       try {
         localStorage.setItem(STORAGE_KEY, activeTab);
       } catch {
-        /* ignore storage errors */
+        return
       }
     }
   }, [activeTab]);
 
-  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -66,14 +69,13 @@ const About = () => {
   return (
     <Layout>
       <div className="flex flex-col items-center justify-center px-4 py-8 w-full relative">
-        {/* Desktop Navbar */}
         <AboutNavbar
           tabs={tabs.filter((tab) => tab.key !== "home")}
           activeTab={activeTab}
           setActiveTab={setActiveTab}
         />
 
-        {/* Mobile Hamburger Menu */}
+        {/* Mobile menu (unchanged, now with localized labels) */}
         <div className="lg:hidden w-full mb-6 flex justify-start relative" ref={menuRef}>
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
@@ -88,9 +90,8 @@ const About = () => {
                 <button
                   key={tab.key}
                   onClick={() => {
-                    if (tab.key === "home") {
-                      window.location.href = "/";
-                    } else {
+                    if (tab.key === "home") window.location.href = "/";
+                    else {
                       setActiveTab(tab.key);
                       setMenuOpen(false);
                     }
@@ -107,7 +108,6 @@ const About = () => {
           )}
         </div>
 
-        {/* Dynamic Content */}
         <div className="w-full max-w-3xl lg:pt-20">{renderTab()}</div>
       </div>
     </Layout>

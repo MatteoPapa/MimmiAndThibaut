@@ -11,14 +11,14 @@ const Home = () => {
           <img
             src="images/cornice-sopra_transparent_mod.png"
             alt="Decorazione"
-            className="absolute top-0 left-0 w-80 opacity-90 pointer-events-none select-none "
+            className="absolute top-0 left-3 w-70 md:w-90 opacity-90 pointer-events-none select-none "
             style={{ zIndex: -10 }}
           />
 
           <img
             src="images/cornice-sotto_transparent.png"
             alt="Decorazione"
-            className="absolute bottom-0 right-0 w-60 opacity-90 pointer-events-none select-none "
+            className="absolute bottom-0 right-3 w-50 md:w-70 opacity-90 pointer-events-none select-none "
             style={{ zIndex: -10 }}
           />
         <div className="relative flex flex-col items-center justify-center text-center p-10 pt-30 lg:pt-10">
