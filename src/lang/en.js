@@ -44,7 +44,7 @@ export default {
         directionsTitle: "Directions",
         churchName: "Saint Henry’s Church",
         churchAddress: "Viale Ratto delle Sabine, 7, 00131 Roma RM",
-        churchLink: "https://share.google/rRG5Rf090WdxMIouxE",
+        churchLink: "https://share.google/mSme8ArBcknQi3TQY",
         venueName: "Casal Montani",
         venueAddress: "Via di Casal Montani, 00132 Roma RM",
         venueLink: "https://share.google/f1YfYuw86SMhuDAJ1",

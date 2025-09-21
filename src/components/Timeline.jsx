@@ -1,6 +1,3 @@
-// Timeline.jsx
-/* eslint-disable react/prop-types */
-
 const Timeline = ({ events }) => {
   return (
     <div className="relative border-l-1 border-dashed border-[#41403E] mx-auto sm:max-w-2xl pl-8">

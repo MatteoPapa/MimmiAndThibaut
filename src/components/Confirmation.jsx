@@ -3,13 +3,13 @@ import { useLanguage } from "../context/LanguageContext";
 import YesNoToggle from "./YesNoToggle";
 import "../assets/toggle.css";
 
+const withBase = (p) => `${import.meta.env.BASE_URL}${p.replace(/^\/+/, "")}`;
+
 const Confirmation = () => {
   const { t } = useLanguage();
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleChange = (e) => setSelectedOption(e.target.value?.toLowerCase?.() || "");
-
-  // Compatibility helpers (supports it/fr/en values)
   const isYes = (val) => ["yes", "si", "sì", "oui"].includes(val);
   const isNo  = (val) => ["no", "non"].includes(val);
 
@@ -38,7 +38,7 @@ const Confirmation = () => {
               className="button-drawn lined thin text-black hover:text-black flex items-center gap-3"
             >
               <img
-                src="/images/link.png"
+                src={withBase("images/link.png")}
                 alt="Google Form"
                 className="h-10 w-10"
               />
@@ -52,7 +52,7 @@ const Confirmation = () => {
         <div>
           <p className="mt-4">{t.rsvp.noMessage}</p>
           <img
-            src="/images/crying_transparent.png"
+            src={withBase("images/crying_transparent.png")}
             alt="Sad emoji"
             className="w-100 mx-auto"
           />
