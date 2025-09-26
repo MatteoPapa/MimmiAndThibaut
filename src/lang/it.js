@@ -35,7 +35,7 @@ export default {
                 description: "E infine… let’s dance!",
             },
             {
-                time: "t.b.d.",
+                time: "02:00",
                 image: "/images/theend.png",
                 title: "Fine della festa",
                 description: "Grazie per aver festeggiato con noi!",
