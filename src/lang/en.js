@@ -70,5 +70,6 @@ export default {
         intro: "Money doesn’t buy happiness, but a honeymoon does :)",
         button: "I want the newlyweds happy!",
         iban: "FR7617515900000445403710802",
+        galleryTitle: "Our adventures so far"
     },
 };

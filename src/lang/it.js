@@ -70,5 +70,6 @@ export default {
         intro: "I soldi non fanno la felicità, ma il viaggio di nozze sì :)",
         button: "Voglio gli sposi felici!",
         iban: "FR7617515900000445403710802",
+        galleryTitle: "Le nostre avventure finora"
     },
 };
