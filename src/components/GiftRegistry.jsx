@@ -130,7 +130,7 @@ const Carousel = ({ images = galleryImages, auto = true, interval = 3500 }) => {
             <figure className="overflow-hidden rounded-2xl shadow-sm bg-white">
               <img
                 src={img.src}
-                alt={img.alt || `Slide ${idx + 1}`}
+                alt={img.alt || ""}
                 className="h-60 sm:h-72 md:h-80 lg:h-64 w-full object-cover"
                 loading={idx > 1 ? "lazy" : "eager"}
               />
