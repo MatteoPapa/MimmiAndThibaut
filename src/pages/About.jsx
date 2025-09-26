@@ -6,12 +6,14 @@ import Confirmation from "../components/Confirmation.jsx";
 import GiftRegistry from "../components/GiftRegistry.jsx";
 import AboutNavbar from "../components/AboutNavbar.jsx";
 import { useLanguage } from "../context/LanguageContext"; // ← add
+import { useNavigate } from "react-router-dom";
 
 const STORAGE_KEY = "about_active_tab";
 const VALID_TABS = ["information", "confirmation", "gift"];
 
 const About = () => {
   const { t } = useLanguage(); // ← get translations
+  const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState(() => {
     try {
@@ -90,7 +92,7 @@ const About = () => {
                 <button
                   key={tab.key}
                   onClick={() => {
-                    if (tab.key === "home") window.location.href = "/";
+                    if (tab.key === "home") navigate("/");
                     else {
                       setActiveTab(tab.key);
                       setMenuOpen(false);

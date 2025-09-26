@@ -12,7 +12,7 @@ export default {
                 image: "/images/church-time.png",
                 title: "Ceremony",
                 description:
-                    "The ceremony will take place at Saint Henry’s Church, a modern and bright church, deeply connected to Martina’s story, as she grew up in this neighborhood of Casal Monastero.",
+                    "The ceremony will take place at Saint Henry’s Church, a modern and bright church, deeply connected to Martina’s story, as she grew up in this neighborhood.",
             },
             {
                 time: "18:00",
@@ -61,15 +61,18 @@ export default {
         pageTitle: "Confirm your attendance",
         deadlinePrefix: "Please let us know by",
         deadlineDate: "January 20, 2026",
-        yesIntro: "Yay! Fill out the form below to share a few details.",
+        yesOption: "Yes, I'll be there",
+        noOption: "Unfortunately not",
+        yesIntro:
+            "Yay! Please fill out the form below to confirm your presence.",
         formButton: "Form",
         noMessage: "We’re sorry you can’t make it.",
     },
     gift: {
         title: "Gift Registry",
         intro: "Money doesn’t buy happiness, but a honeymoon does :)",
-        button: "I want the newlyweds happy!",
+        button: "I take part to the gift",
         iban: "FR7617515900000445403710802",
-        galleryTitle: "Our adventures so far"
+        galleryTitle: "Our adventures so far",
     },
 };

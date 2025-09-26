@@ -12,7 +12,7 @@ export default {
                 image: "/images/church-time.png",
                 title: "Cerimonia",
                 description:
-                    "La cerimonia si terrà nella chiesa di Sant’Enrico, una chiesa moderna e luminosa, legata alla storia di Martina che è cresciuta in questo quartiere di Casal Monastero.",
+                    "La cerimonia si terrà nella chiesa di Sant’Enrico, una chiesa moderna e luminosa, legata alla storia di Martina che è cresciuta in questo quartiere.",
             },
             {
                 time: "18:00",
@@ -61,14 +61,16 @@ export default {
         pageTitle: "Conferma la tua presenza",
         deadlinePrefix: "Facci sapere se parteciperai entro il",
         deadlineDate: "20 gennaio 2026",
-        yesIntro: "Yeee! Compila il form sottostante per darci più dettagli.",
+        yesOption: "Sì, ci sarò",
+        noOption:"Purtroppo no",
+        yesIntro: "Yeee! Compila il form qui sotto per confermare la tua presenza.",
         formButton: "Form",
         noMessage: "Ci dispiace che non potrai essere dei nostri.",
     },
     gift: {
         title: "Lista Nozze",
         intro: "I soldi non fanno la felicità, ma il viaggio di nozze sì :)",
-        button: "Voglio gli sposi felici!",
+        button: "Partecipa al regalo",
         iban: "FR7617515900000445403710802",
         galleryTitle: "Le nostre avventure finora"
     },

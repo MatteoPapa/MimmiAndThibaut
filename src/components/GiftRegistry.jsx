@@ -10,19 +10,18 @@ const withBase = (p) => `${import.meta.env.BASE_URL}${p.replace(/^\/+/, "")}`;
 
 /* ---------- IMMAGINI CAROSELLO (con BASE_URL) ---------- */
 const galleryImages = [
-  { src: withBase("/images/carousel/01.jpg"), alt: "Foto 1" },
-  { src: withBase("/images/carousel/02.jpg"), alt: "Foto 2" },
-  { src: withBase("/images/carousel/03.jpg"), alt: "Foto 3" },
-  // { src: withBase("/images/carousel/04.jpg"), alt: "Foto 4" },
-  { src: withBase("/images/carousel/05.jpg"), alt: "Foto 5" },
-  { src: withBase("/images/carousel/06.jpg"), alt: "Foto 6" },
-  { src: withBase("/images/carousel/07.jpg"), alt: "Foto 7" },
-  { src: withBase("/images/carousel/08.jpg"), alt: "Foto 8" },
-  { src: withBase("/images/carousel/09.jpg"), alt: "Foto 9" },
-  { src: withBase("/images/carousel/10.jpg"), alt: "Foto 10" },
-  { src: withBase("/images/carousel/11.jpg"), alt: "Foto 11" },
-  { src: withBase("/images/carousel/12.jpg"), alt: "Foto 12" },
-  { src: withBase("/images/carousel/13.jpg"), alt: "Foto 13" },
+  { src: withBase("/images/carousel/01.jpg"), alt: "" },
+  { src: withBase("/images/carousel/02.jpg"), alt: "" },
+  { src: withBase("/images/carousel/03.jpg"), alt: "" },
+  { src: withBase("/images/carousel/05.jpg"), alt: "" },
+  { src: withBase("/images/carousel/06.jpg"), alt: "" },
+  { src: withBase("/images/carousel/07.jpg"), alt: "" },
+  { src: withBase("/images/carousel/08.jpg"), alt: "" },
+  { src: withBase("/images/carousel/09.jpg"), alt: "" },
+  { src: withBase("/images/carousel/10.jpg"), alt: "" },
+  { src: withBase("/images/carousel/11.jpg"), alt: "" },
+  { src: withBase("/images/carousel/12.jpg"), alt: "" },
+  { src: withBase("/images/carousel/13.jpg"), alt: "" },
 ];
 
 function Arrow({ left, onClick, disabled }) {
