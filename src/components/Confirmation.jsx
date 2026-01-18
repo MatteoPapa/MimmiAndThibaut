@@ -19,10 +19,10 @@ const Confirmation = () => {
         {t.rsvp.pageTitle}
       </h2>
 
-      <p className="mb-6">
+      {/* <p className="mb-6">
         {t.rsvp.deadlinePrefix}{" "}
         <span className="shadow-gray-900 text-shadow-md">{t.rsvp.deadlineDate}</span>.
-      </p>
+      </p> */}
 
       <YesNoToggle name="rsvp" onChange={handleChange} />
 
